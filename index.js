@@ -113,6 +113,7 @@ app.get('/success', function(req,res){
 });
 });
 
-app.listen(3000, function(){
-    console.log('Listening');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function(){
+    console.log(`Listening at port ${PORT}`);
 });
