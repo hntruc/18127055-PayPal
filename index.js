@@ -49,14 +49,17 @@ app.get('/',function(req,res){
 })
 
 app.post('/pay', function(req,res){
+    var host = req.get('host');
+
+
     const create_payment_json = {
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3000/success", //khi thanh toan thanh cong
-            "cancel_url": "http://localhost:3000/cancel" // khi thanh oan that bai
+            "return_url": `http://${host}/success`, //khi thanh toan thanh cong
+            "cancel_url": `http://${host}/cancel` // khi thanh toan that bai
         },
         "transactions": [{
             "item_list": {
