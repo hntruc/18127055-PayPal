@@ -1,0 +1,28 @@
+<h2 style="padding-bottom: 5px">
+  Selected books
+</h2>
+
+<div class="productcont" style="display:flex">
+{{#each items}}
+<div class ="item" style="padding:1em; 
+  border:1px solid rgb(13, 109, 88); 
+  margin-right:1em; 
+  border-radius:5px;">
+  <div class ="item-name">
+      Name: {{this.name}}
+  </div>
+  <div class="item-price">
+    Price: ${{this.price}}
+  </div>
+  <div class = "item-quantity">
+    Quantity: {{this.quantity}}
+  </div>
+  </div>
+{{/each}}
+
+</div>
+<div style="padding-top: 20px;">
+    <form action="/pay" method="POST" >
+    <input type="submit", value="Buy">
+  </form>
+</div>
